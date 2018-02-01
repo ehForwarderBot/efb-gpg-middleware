@@ -36,7 +36,7 @@ Getting Started
     pip3 install efb-gpg-middleware
 
 4. Create a config file in your current EFB profile:
-  ``<PATH_TO_EFB_PROFILE>/blueset.gpg/config.yaml``::
+   ``<PATH_TO_EFB_PROFILE>/blueset.gpg/config.yaml``::
 
         # Signature of your own key pair (required)
         key: BD6B65EC00638DC9083781D5D4B65BB1A106200A
@@ -66,8 +66,7 @@ delivered to slave channel.
 
 * ``gpg`info``: Show the key fingerprint used for this chat.
 * ``gpg`search query``: Search for a key from the key server.
-* ``gpg`bind fingerprinthex``: Use key for specified
-    fingerprint for a chat.
+* ``gpg`bind fingerprinthex``: Use key for specified fingerprint for a chat.
 * ``gpg`clear``: Do not encrypt messages sent to this chat.
 
 When you have told the middleware to use a key for a chat,
