@@ -1,6 +1,6 @@
 import sys
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 if sys.version_info < (3, 6):
     raise Exception("Python 3.6 or higher is required. Your version is %s." % sys.version)
@@ -15,7 +15,7 @@ long_description = open('README.rst').read()
 
 setup(
     name='efb-gpg-middleware',
-    namespace_package=['efb_gpg_middleware'],
+    packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     version=__version__,
     description='GPG middleware for EH Forwarder Bot, encrypts and decrypts messages.',
     long_description=long_description,
