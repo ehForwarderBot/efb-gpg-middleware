@@ -1,6 +1,13 @@
 EFB GPG Middleware
 ==================
 
+.. image:: https://img.shields.io/pypi/v/efb-gpg-middleware.svg
+   :alt: PyPI release
+   :target: https://pypi.org/project/efb-gpg-middleware/
+.. image:: https://img.shields.io/badge/Translate-Crowdin-orange.svg
+   :alt: Translate this project
+   :target: https://crowdin.com/project/ehforwarderbot/
+
 **Module ID**: ``blueset.gpg``
 
 A middleware for EH Forwarder Bot that encrypts and
@@ -29,7 +36,7 @@ Getting Started
 ---------------
 
 1. Make sure you have access to a public key server
-   of your choice with the ``gpg`` installed.
+   of your choice using the ``gpg`` installed.
 2. Have at least one key pair registered in local GPG.
 3. Install this middleware::
 
