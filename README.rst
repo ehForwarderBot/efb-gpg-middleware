@@ -90,3 +90,15 @@ Footnote
 If you find this module not as useful, don't laugh. This is just
 a demo that shows you one type of things you can do with EFB
 Middleware.
+
+Experimental localization support
+---------------------------------
+
+GPG Middleware supports localized user interface prompts
+experimentally, by setting the locale environmental variable
+(``LANGUAGE``, ``LC_ALL``, ``LC_MESSAGES`` or ``LANG``) to one
+of our `supported languages`_. Meanwhile, you can help to
+translate this project into your languages on `our Crowdin page`_.
+
+.. _supported languages: https://crowdin.com/project/ehforwarderbot/
+.. _our Crowdin page: https://crowdin.com/project/ehforwarderbot/
