@@ -137,7 +137,7 @@ class GPGMiddleware(EFBMiddleware):
                 else:
                     text = self._("{0} is not a valid key.").format(key)
             else:
-                text = self._("Usage: pgp`bind FingerPrintHex")
+                text = self._("Usage: gpg`bind FingerPrintHex")
             self.reply_message(message, text)
             return
         else:
