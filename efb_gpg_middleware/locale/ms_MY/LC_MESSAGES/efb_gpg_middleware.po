@@ -5,15 +5,15 @@ msgstr ""
 "POT-Creation-Date: 2018-02-17 14:34+0800\n"
 "PO-Revision-Date: 2018-02-18 07:51-0500\n"
 "Last-Translator: blueset <ilove@1a23.com>\n"
-"Language-Team: Indonesian\n"
-"Language: id_ID\n"
+"Language-Team: Malay\n"
+"Language: ms_MY\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: ehforwarderbot\n"
-"X-Crowdin-Language: id\n"
+"X-Crowdin-Language: ms\n"
 "X-Crowdin-File: /EFBChannels/efb-gpg-middleware/efb_gpg_middleware/locale/efb_gpg_middleware.pot\n"
 
 #: efb_gpg_middleware/__init__.py:58
@@ -23,15 +23,15 @@ msgstr ""
 #: efb_gpg_middleware/__init__.py:93
 #, python-brace-format
 msgid "This chat has GPG key: {0}"
-msgstr "Obrolan ini mempunyai kunci GPG: {0}"
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:95
 msgid "This chat has no GPG key."
-msgstr "Obrolan ini tidak mempunyai kunci GPG."
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:102
 msgid "This chat now has no GPG key."
-msgstr "Obrolan ini sekarang tidak mempunyai kunci GPG."
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:110
 msgid "Found the following keys: "
@@ -44,17 +44,17 @@ msgstr ""
 #: efb_gpg_middleware/__init__.py:128
 #, python-brace-format
 msgid "Key {0} not found."
-msgstr "Kunci {0} tidak ditemukan."
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:132 efb_gpg_middleware/__init__.py:136
 #, python-brace-format
 msgid "Key {0} is now for this chat."
-msgstr "Kunci {0} sekarang untuk obrolan ini."
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:138
 #, python-brace-format
 msgid "{0} is not a valid key."
-msgstr "{0} bukan kunci yang cocok."
+msgstr ""
 
 #: efb_gpg_middleware/__init__.py:140
 msgid "Usage: gpg`bind FingerPrintHex"
