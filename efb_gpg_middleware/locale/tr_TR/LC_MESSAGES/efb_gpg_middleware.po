@@ -3,39 +3,39 @@ msgstr ""
 "Project-Id-Version: ehforwarderbot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:34+0800\n"
-"PO-Revision-Date: 2018-02-18 02:35-0500\n"
+"PO-Revision-Date: 2018-02-18 02:34-0500\n"
 "Last-Translator: blueset <ilove@1a23.com>\n"
-"Language-Team: Chinese Traditional\n"
-"Language: zh_TW\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: ehforwarderbot\n"
-"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-Language: tr\n"
 "X-Crowdin-File: /EFBChannels/efb-gpg-middleware/efb_gpg_middleware/locale/efb_gpg_middleware.pot\n"
 
 #: efb_gpg_middleware/__init__.py:58
 msgid "GnuPG middleware is not configured."
-msgstr ""
+msgstr "GnuPG özel yazılımı yapılandırılmadı."
 
 #: efb_gpg_middleware/__init__.py:93
 #, python-brace-format
 msgid "This chat has GPG key: {0}"
-msgstr ""
+msgstr "Bu sohbette GPG anahtarı vardır: {0}"
 
 #: efb_gpg_middleware/__init__.py:95
 msgid "This chat has no GPG key."
-msgstr ""
+msgstr "Bu sohbette GPG anahtarı yoktur."
 
 #: efb_gpg_middleware/__init__.py:102
 msgid "This chat now has no GPG key."
-msgstr ""
+msgstr "Bu sohbetin şimdi bir GPG anahtarı var."
 
 #: efb_gpg_middleware/__init__.py:110
 msgid "Found the following keys: "
-msgstr ""
+msgstr "Aşağıdaki anahtarlar bulundu: "
 
 #: efb_gpg_middleware/__init__.py:116
 msgid "Usage: gpg`search query"
@@ -44,17 +44,17 @@ msgstr ""
 #: efb_gpg_middleware/__init__.py:128
 #, python-brace-format
 msgid "Key {0} not found."
-msgstr ""
+msgstr "{0} şifresi bulunamadı."
 
 #: efb_gpg_middleware/__init__.py:132 efb_gpg_middleware/__init__.py:136
 #, python-brace-format
 msgid "Key {0} is now for this chat."
-msgstr ""
+msgstr "{0} şifresi artık bu sohbet için mevcut."
 
 #: efb_gpg_middleware/__init__.py:138
 #, python-brace-format
 msgid "{0} is not a valid key."
-msgstr ""
+msgstr "{0} geçerli bir şifre değildir."
 
 #: efb_gpg_middleware/__init__.py:140
 msgid "Usage: gpg`bind FingerPrintHex"

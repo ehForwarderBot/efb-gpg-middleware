@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ehforwarderbot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-09 22:46+0800\n"
-"PO-Revision-Date: 2018-02-11 03:48-0500\n"
+"POT-Creation-Date: 2018-02-17 14:34+0800\n"
+"PO-Revision-Date: 2018-02-18 02:34-0500\n"
 "Last-Translator: blueset <ilove@1a23.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -18,45 +18,45 @@ msgstr ""
 
 #: efb_gpg_middleware/__init__.py:58
 msgid "GnuPG middleware is not configured."
-msgstr ""
+msgstr "GnuPG ミドルウェアはまだ設定されません。"
 
 #: efb_gpg_middleware/__init__.py:93
 #, python-brace-format
 msgid "This chat has GPG key: {0}"
-msgstr ""
+msgstr "このチャットの GPG キーは：{0}"
 
 #: efb_gpg_middleware/__init__.py:95
 msgid "This chat has no GPG key."
-msgstr ""
+msgstr "このチャットは GPG キーがありません。"
 
 #: efb_gpg_middleware/__init__.py:102
 msgid "This chat now has no GPG key."
-msgstr ""
+msgstr "このチャットの GPG キーが削除されました。"
 
 #: efb_gpg_middleware/__init__.py:110
 msgid "Found the following keys: "
-msgstr ""
+msgstr "次のキーが見つかりました： "
 
 #: efb_gpg_middleware/__init__.py:116
 msgid "Usage: gpg`search query"
-msgstr ""
+msgstr "用法：gpg`search キーワード"
 
 #: efb_gpg_middleware/__init__.py:128
 #, python-brace-format
 msgid "Key {0} not found."
-msgstr ""
+msgstr "キー {0} が見つかりません"
 
 #: efb_gpg_middleware/__init__.py:132 efb_gpg_middleware/__init__.py:136
 #, python-brace-format
 msgid "Key {0} is now for this chat."
-msgstr ""
+msgstr "キー {0} はこのチャットに設定されました。"
 
 #: efb_gpg_middleware/__init__.py:138
 #, python-brace-format
 msgid "{0} is not a valid key."
-msgstr ""
+msgstr "{0} は無効なキーです。"
 
 #: efb_gpg_middleware/__init__.py:140
-msgid "Usage: pgp`bind FingerPrintHex"
-msgstr ""
+msgid "Usage: gpg`bind FingerPrintHex"
+msgstr "用法: gpg`bind フィンガープリントの１６進数"
 
