@@ -49,7 +49,9 @@ class GPGMiddleware(EFBMiddleware):
                              fallback=True)
     _ = translator.gettext
 
-    def __init__(self):
+    def __init__(self, instance_id: str = None):
+        super().__init__(instance_id)
+
         storage_path = utils.get_data_path(self.middleware_id)
         config_path = utils.get_config_path(self.middleware_id)
         if not os.path.exists(storage_path):
