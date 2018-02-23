@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ehforwarderbot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 14:34+0800\n"
-"PO-Revision-Date: 2018-02-18 07:51-0500\n"
+"POT-Creation-Date: 2018-02-22 10:05+1100\n"
+"PO-Revision-Date: 2018-02-23 05:45-0500\n"
 "Last-Translator: blueset <ilove@1a23.com>\n"
 "Language-Team: Spanish, Venezuela\n"
 "Language: es_VE\n"
@@ -16,47 +16,47 @@ msgstr ""
 "X-Crowdin-Language: es-VE\n"
 "X-Crowdin-File: /EFBChannels/efb-gpg-middleware/efb_gpg_middleware/locale/efb_gpg_middleware.pot\n"
 
-#: efb_gpg_middleware/__init__.py:58
+#: efb_gpg_middleware/__init__.py:60
 msgid "GnuPG middleware is not configured."
-msgstr ""
-
-#: efb_gpg_middleware/__init__.py:93
-#, python-brace-format
-msgid "This chat has GPG key: {0}"
-msgstr ""
+msgstr "El middleware de GnuPG no está configurado."
 
 #: efb_gpg_middleware/__init__.py:95
+#, python-brace-format
+msgid "This chat has GPG key: {0}"
+msgstr "Este chat tiene la clave GPG: {0}"
+
+#: efb_gpg_middleware/__init__.py:97
 msgid "This chat has no GPG key."
-msgstr ""
+msgstr "Este chat no tiene clave GPG."
 
-#: efb_gpg_middleware/__init__.py:102
+#: efb_gpg_middleware/__init__.py:104
 msgid "This chat now has no GPG key."
-msgstr ""
+msgstr "Este chat ahora no tiene clave GPG."
 
-#: efb_gpg_middleware/__init__.py:110
+#: efb_gpg_middleware/__init__.py:112
 msgid "Found the following keys: "
-msgstr ""
+msgstr "Encontramos las siguientes claves: "
 
-#: efb_gpg_middleware/__init__.py:116
+#: efb_gpg_middleware/__init__.py:118
 msgid "Usage: gpg`search query"
-msgstr ""
+msgstr "Uso: consulta de búsqueda gpg`search"
 
-#: efb_gpg_middleware/__init__.py:128
+#: efb_gpg_middleware/__init__.py:130
 #, python-brace-format
 msgid "Key {0} not found."
-msgstr ""
+msgstr "Clave {0} no encontrada."
 
-#: efb_gpg_middleware/__init__.py:132 efb_gpg_middleware/__init__.py:136
+#: efb_gpg_middleware/__init__.py:134 efb_gpg_middleware/__init__.py:138
 #, python-brace-format
 msgid "Key {0} is now for this chat."
-msgstr ""
-
-#: efb_gpg_middleware/__init__.py:138
-#, python-brace-format
-msgid "{0} is not a valid key."
-msgstr ""
+msgstr "La clave {0} es la siguiente para este chat."
 
 #: efb_gpg_middleware/__init__.py:140
+#, python-brace-format
+msgid "{0} is not a valid key."
+msgstr "0} no es una clave válida."
+
+#: efb_gpg_middleware/__init__.py:142
 msgid "Usage: gpg`bind FingerPrintHex"
-msgstr ""
+msgstr "Uso: gpg`bind FingerPrintHex"
 
