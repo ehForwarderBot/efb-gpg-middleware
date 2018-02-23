@@ -89,7 +89,7 @@ class GPGMiddleware(EFBMiddleware):
         self.logger.debug("[%s] is a text message.", message.uid)
         chat_key = (message.chat.channel_id, message.chat.chat_uid)
         is_self = message.author.is_self
-        if message.text.startswith("gpg`show") and is_self:
+        if message.text and message.text.startswith("gpg`show") and is_self:
             self.logger.debug("[%s] is a text message.", message.uid)
             if chat_key in self.mappings:
                 text = self._("This chat has GPG key: {0}").format(self.mappings[chat_key])
@@ -97,13 +97,13 @@ class GPGMiddleware(EFBMiddleware):
                 text = self._("This chat has no GPG key.")
             self.reply_message(message, text)
             return
-        elif message.text.startswith("gpg`clear") and is_self:
+        elif message.text and message.text.startswith("gpg`clear") and is_self:
             if chat_key in self.mappings:
                 del self.mappings[chat_key]
                 pickle.dump(self.mappings, open(self.mappings_path, 'wb'))
             self.reply_message(message, self._("This chat now has no GPG key."))
             return
-        elif message.text.strip().startswith("gpg`search"):
+        elif message.text and message.text.strip().startswith("gpg`search"):
             if message.text.strip().startswith("gpg`search ") and \
                     len(message.text.strip()) > len("gpg`search ") and is_self:
                 _, query = message.text.split(' ', 1)
@@ -118,7 +118,7 @@ class GPGMiddleware(EFBMiddleware):
                 text = self._("Usage: gpg`search query")
             self.reply_message(message, text)
             return
-        elif message.text.strip().startswith("gpg`bind"):
+        elif message.text and message.text.strip().startswith("gpg`bind"):
             if message.text.strip().startswith("gpg`bind ") and \
                     len(message.text.strip()) > len("gpg`bind ") and is_self:
                 _, key = message.text.split(' ', 1)
