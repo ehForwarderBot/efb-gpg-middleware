@@ -54,8 +54,6 @@ class GPGMiddleware(EFBMiddleware):
 
         storage_path = utils.get_data_path(self.middleware_id)
         config_path = utils.get_config_path(self.middleware_id)
-        if not os.path.exists(storage_path):
-            os.makedirs(storage_path)
         if not os.path.exists(config_path):
             raise EFBException(self._("GnuPG middleware is not configured."))
         else:
@@ -72,9 +70,7 @@ class GPGMiddleware(EFBMiddleware):
         if os.path.exists(self.mappings_path):
             self.mappings = pickle.load(open(self.mappings_path, 'rb'))
 
-        self.chat = EFBChat()
-        self.chat.channel_name = self.middleware_name
-        self.chat.channel_id = self.middleware_id
+        self.chat = EFBChat(middleware=self)
         self.chat.channel_emoji = "🔐"
         self.chat.chat_uid = "__blueset.gpg__"
         self.chat.chat_name = self.middleware_name
@@ -87,7 +83,7 @@ class GPGMiddleware(EFBMiddleware):
         if not message.type == MsgType.Text:
             return message
         self.logger.debug("[%s] is a text message.", message.uid)
-        chat_key = (message.chat.channel_id, message.chat.chat_uid)
+        chat_key = (message.chat.module_id, message.chat.chat_uid)
         is_self = message.author.is_self
         if message.text and message.text.startswith("gpg`show") and is_self:
             self.logger.debug("[%s] is a text message.", message.uid)
@@ -161,7 +157,7 @@ class GPGMiddleware(EFBMiddleware):
     def reply_message(self, message: EFBMsg, text: str):
         reply = EFBMsg()
         reply.text = text
-        reply.chat = coordinator.slaves[message.chat.channel_id].get_chat(message.chat.chat_uid)
+        reply.chat = coordinator.slaves[message.chat.module_id].get_chat(message.chat.chat_uid)
         reply.author = self.chat
         reply.type = MsgType.Text
         reply.deliver_to = coordinator.master

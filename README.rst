@@ -8,6 +8,9 @@ EFB GPG Middleware
    :alt: Translate this project
    :target: https://crowdin.com/project/ehforwarderbot/
 
+.. image:: https://github.com/blueset/efb-gpg-middleware/blob/master/banner.png
+   :alt: Banner
+
 **Module ID**: ``blueset.gpg``
 
 A middleware for EH Forwarder Bot that encrypts and
