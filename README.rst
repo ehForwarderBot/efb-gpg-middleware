@@ -4,11 +4,14 @@ EFB GPG Middleware
 .. image:: https://img.shields.io/pypi/v/efb-gpg-middleware.svg
    :alt: PyPI release
    :target: https://pypi.org/project/efb-gpg-middleware/
+.. image:: https://pepy.tech/badge/efb-gpg-middleware/month
+   :alt: Downloads per month
+   :target: https://pepy.tech/project/efb-gpg-middleware
 .. image:: https://d322cqt584bo4o.cloudfront.net/ehforwarderbot/localized.svg
    :alt: Translate this project
    :target: https://crowdin.com/project/ehforwarderbot/
 
-.. image:: https://github.com/blueset/efb-gpg-middleware/blob/master/banner.png
+.. image:: https://github.com/blueset/efb-gpg-middleware/raw/master/banner.png
    :alt: Banner
 
 **Module ID**: ``blueset.gpg``
@@ -90,9 +93,8 @@ if the decryption is successful.
 Footnote
 --------
 
-If you find this module not as useful, don't laugh. This is just
-a demo that shows you one type of things you can do with EFB
-Middleware.
+If you find this module not as useful, don’t be disappointed. This is just
+a demo to show you what you can do with EFB Middlewares.
 
 Experimental localization support
 ---------------------------------
