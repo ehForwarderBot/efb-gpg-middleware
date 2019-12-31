@@ -70,11 +70,13 @@ class GPGMiddleware(EFBMiddleware):
         if os.path.exists(self.mappings_path):
             self.mappings = pickle.load(open(self.mappings_path, 'rb'))
 
-        self.chat = EFBChat(middleware=self)
-        self.chat.channel_emoji = "🔐"
-        self.chat.chat_uid = "__blueset.gpg__"
-        self.chat.chat_name = self.middleware_name
-        self.chat.chat_type = ChatType.System
+        self.chat = EFBChat(
+            middleware=self,
+            channel_emoji="🔐",
+            chat_uid="__blueset.gpg__",
+            chat_name=self.middleware_name,
+            chat_type=ChatType.System
+        )
 
         self.logger = logging.getLogger("blueset.gpg")
 
