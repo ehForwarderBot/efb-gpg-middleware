@@ -1,22 +1,24 @@
 # coding=utf-8
 
+import logging
 import os
 import pickle
-import logging
 import uuid
-from pkg_resources import resource_filename
 from gettext import translation
 from typing import Optional, Dict, Tuple
 
-from ehforwarderbot import EFBMiddleware, EFBMsg, utils, MsgType, EFBChat, ChatType, coordinator
-from ehforwarderbot.exceptions import EFBException
 import gnupg
 import yaml
+from pkg_resources import resource_filename
 
+from ehforwarderbot import Middleware, Message, utils, MsgType, coordinator
+from ehforwarderbot.chat import SelfChatMember
+from ehforwarderbot.exceptions import EFBException
+from ehforwarderbot.types import ChatID, MessageID
 from .__version__ import __version__ as version
 
 
-class GPGMiddleware(EFBMiddleware):
+class GPGMiddleware(Middleware):
     """
     Configuration:
 
@@ -33,10 +35,9 @@ class GPGMiddleware(EFBMiddleware):
     __version__: str = version
 
     mappings: Dict[Tuple[str, str], str] = {}
-    chat: EFBChat = None
 
-    key: str = None
-    password: str = None
+    key: str = ""
+    password: str = ""
     always_trust: bool = True
     binary: str = "gpg"
     server: str = "pgp.mit.edu"
@@ -70,23 +71,15 @@ class GPGMiddleware(EFBMiddleware):
         if os.path.exists(self.mappings_path):
             self.mappings = pickle.load(open(self.mappings_path, 'rb'))
 
-        self.chat = EFBChat(
-            middleware=self,
-            channel_emoji="🔐",
-            chat_uid="__blueset.gpg__",
-            chat_name=self.middleware_name,
-            chat_type=ChatType.System
-        )
-
         self.logger = logging.getLogger("blueset.gpg")
 
-    def process_message(self, message: EFBMsg) -> Optional[EFBMsg]:
+    def process_message(self, message: Message) -> Optional[Message]:
         self.logger.debug("Received message: %s", message)
         if not message.type == MsgType.Text:
             return message
         self.logger.debug("[%s] is a text message.", message.uid)
-        chat_key = (message.chat.module_id, message.chat.chat_uid)
-        is_self = message.author.is_self
+        chat_key = (message.chat.module_id, message.chat.id)
+        is_self = isinstance(message.author, SelfChatMember)
         if message.text and message.text.startswith("gpg`show") and is_self:
             self.logger.debug("[%s] is a text message.", message.uid)
             if chat_key in self.mappings:
@@ -141,12 +134,12 @@ class GPGMiddleware(EFBMiddleware):
             self.reply_message(message, text)
             return
         else:
-            if message.author.is_self and chat_key in self.mappings:
+            if is_self and chat_key in self.mappings:
                 crypt = str(self.gpg.encrypt(message.text, self.mappings[chat_key],
                                              always_trust=self.always_trust))
                 if crypt:
                     message.text = crypt
-            elif not message.author.is_self:
+            elif not is_self:
                 try:
                     plain = str(self.gpg.decrypt(message.text, always_trust=self.always_trust,
                                                  passphrase=self.password))
@@ -156,13 +149,14 @@ class GPGMiddleware(EFBMiddleware):
                     pass
             return message
 
-    def reply_message(self, message: EFBMsg, text: str):
-        reply = EFBMsg()
-        reply.text = text
-        reply.chat = coordinator.slaves[message.chat.module_id].get_chat(message.chat.chat_uid)
-        reply.author = self.chat
-        reply.type = MsgType.Text
-        reply.deliver_to = coordinator.master
-        reply.target = message
-        reply.uid = str(uuid.uuid4())
-        coordinator.send_message(reply)
+    def reply_message(self, message: Message, text: str):
+        author = message.chat.make_system_member(name=self.middleware_name, id=ChatID("__blueset.middleware__"), middleware=self)
+        coordinator.send_message(Message(
+            text=text,
+            chat=message.chat,
+            author=author,
+            type=MsgType.Text,
+            deliver_to=coordinator.master,
+            target=message,
+            uid=MessageID(str(uuid.uuid4())),
+        ))

@@ -35,11 +35,12 @@ setup(
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Communications :: Chat",
         "Topic :: Utilities"
     ],
     install_requires=[
-        "ehforwarderbot",
+        "ehforwarderbot>=2.0.0b26",
         "python-gnupg"
     ],
     entry_points={
