@@ -78,7 +78,7 @@ class GPGMiddleware(Middleware):
         if not message.type == MsgType.Text:
             return message
         self.logger.debug("[%s] is a text message.", message.uid)
-        chat_key = (message.chat.module_id, message.chat.id)
+        chat_key = (message.chat.module_id, message.chat.uid)
         is_self = isinstance(message.author, SelfChatMember)
         if message.text and message.text.startswith("gpg`show") and is_self:
             self.logger.debug("[%s] is a text message.", message.uid)
@@ -150,7 +150,7 @@ class GPGMiddleware(Middleware):
             return message
 
     def reply_message(self, message: Message, text: str):
-        author = message.chat.make_system_member(name=self.middleware_name, id=ChatID("__blueset.middleware__"), middleware=self)
+        author = message.chat.make_system_member(name=self.middleware_name, uid=ChatID("__blueset.middleware__"), middleware=self)
         coordinator.send_message(Message(
             text=text,
             chat=message.chat,

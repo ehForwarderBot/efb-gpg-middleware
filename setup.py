@@ -40,7 +40,7 @@ setup(
         "Topic :: Utilities"
     ],
     install_requires=[
-        "ehforwarderbot>=2.0.0b26",
+        "ehforwarderbot>=2.0.0b28",
         "python-gnupg"
     ],
     entry_points={
