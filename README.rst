@@ -77,7 +77,7 @@ Send commands as text messages in chats to interact with
 the middleware. All command messages will not be
 delivered to slave channel.
 
-* ``gpg`info``: Show the key fingerprint used for this chat.
+* ``gpg`info`` or ``gpg`show``: Show the key fingerprint used for this chat.
 * ``gpg`search query``: Search for a key from the key server.
 * ``gpg`bind fingerprinthex``: Use key for specified fingerprint for a chat.
 * ``gpg`clear``: Do not encrypt messages sent to this chat.

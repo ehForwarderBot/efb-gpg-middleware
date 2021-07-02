@@ -80,7 +80,10 @@ class GPGMiddleware(Middleware):
         self.logger.debug("[%s] is a text message.", message.uid)
         chat_key = (message.chat.module_id, message.chat.uid)
         is_self = isinstance(message.author, SelfChatMember)
-        if message.text and message.text.startswith("gpg`show") and is_self:
+        if message.text and (
+                message.text.startswith("gpg`show") or
+                message.text.startswith("gpg`info")
+        ) and is_self:
             self.logger.debug("[%s] is a text message.", message.uid)
             if chat_key in self.mappings:
                 text = self._("This chat has GPG key: {0}").format(self.mappings[chat_key])
